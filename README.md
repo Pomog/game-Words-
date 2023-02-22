@@ -2,8 +2,7 @@
 <img src="https://github.com/Pomog/game-Words-/blob/main/logo.png?raw=true" alt="Words game" style="width:25%;">
 
 # Overview
-The game will be implemented on Android, with data stored in a MySQL table on a Tomcat server.
-The player enters a word (not a proper name), and the next player enters a word that starts with the letter in which the previous player's word ends. Score charged for each subsequent word.
+The game will be implemented on Android, with data stored in a MySQL database on a Tomcat server. Players take turns entering words (excluding proper nouns), with each word having to start with the letter that the previous player's word ended with. Points are awarded for each valid word played.
 
 # Goals
 Python training
