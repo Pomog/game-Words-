@@ -5,7 +5,7 @@
 <img src="https://github.com/Pomog/game-Words-/blob/main/Structure.png?raw=true" alt="initial scheme" style="width:75%;">
 
 # size
-https://img.shields.io/github/languages/code-size/Pomog/game-Words-?style=for-the-badge
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pomog/game-Words-)
 
 
 # Contributors
