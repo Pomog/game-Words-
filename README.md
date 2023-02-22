@@ -6,7 +6,7 @@
 
 # size
 https://img.shields.io/github/languages/code-size/Pomog/game-Words-?style=for-the-badge
-https://img.shields.io/github/languages/code-size/Pomog/game-Words-?style=for-the-badge
+
 
 # Contributors
 [@TartuDen](https://github.com/TartuDen)
