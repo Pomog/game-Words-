@@ -6,4 +6,4 @@
 
 # weekly commits
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Pomog/game-Words-)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/game-Words-)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/TartuDen/game-Words-)
