@@ -7,38 +7,45 @@ class InputProcessor:
 	A class for processing user input and storing English words separated by initial letter into columns of a SQLite database.
 
 	Attributes:
-		username (str): The username of the user.
-		conn (sqlite3.Connection): The connection to the SQLite database.
-		cursor (sqlite3.Cursor): The cursor used to execute SQLite commands.
+	username (str): The username of the user.
+	conn (sqlite3.Connection): The connection to the SQLite database.
+	cursor (sqlite3.Cursor): The cursor used to execute SQLite commands.
 
 	Methods:
-		create_database(db_name: str) -> None:
-			Creates a new SQLite database with columns for each letter of the alphabet, if it doesn't already exist.
-			Args:
-				db_name (str): The name of the database to create.
-			Returns:
-				None.
+	create_database(db_name: str) -> None:
+		Creates a new SQLite database with columns for each letter of the alphabet, if it doesn't already exist.
+		Args:
+			db_name (str): The name of the database to create.
+		Returns:
+			None.
 
-		input_request() -> str:
-			Prompts the user to enter a word and returns the user's input.
-			Args:
-				None.
-			Returns:
-				str: The user's input.
+	input_request() -> str:
+		Prompts the user to enter a word and returns the user's input.
+		Args:
+			None.
+		Returns:
+			str: The user's input.
 
-		input_validator(word: str) -> bool:
-			Validates a word against the English words database.
-			Args:
-				word (str): The word to validate.
-			Returns:
-				bool: True if the word is valid, False otherwise.
+	input_validator(word: str) -> bool:
+		Validates a word against the English words database.
+		Args:
+			word (str): The word to validate.
+		Returns:
+			bool: True if the word is valid, False otherwise.
 
-		input_acceptor(word: str) -> None:
-			Accepts a word into the English words database.
-			Args:
-				word (str): The word to accept.
-			Returns:
-				None.
+	input_acceptor(word: str) -> None:
+		Accepts a word into the English words database.
+		Args:
+			word (str): The word to accept.
+		Returns:
+			None.
+
+	get_words_by_letter(letter: str) -> list:
+		Retrieves all words saved in the database that start with a given letter.
+		Args:
+			letter (str): The letter to search for.
+		Returns:
+			list: A list of words starting with the given letter.
 	"""
 	
 	def __init__(self, username):
