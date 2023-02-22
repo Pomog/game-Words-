@@ -1,4 +1,6 @@
 # game-Words-
+https://img.shields.io/github/languages/code-size/Pomog/game-Words-?style=for-the-badge
+https://img.shields.io/github/languages/code-size/Pomog/game-Words-?style=for-the-badge
 <img src="https://github.com/Pomog/game-Words-/blob/main/logo.png?raw=true" alt="Words game" style="width:25%;">
 
 # initial scheme
