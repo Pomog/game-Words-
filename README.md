@@ -15,6 +15,4 @@ Python training
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Pomog/game-Words-)
 
 
-# Contributors
-[@TartuDen](https://github.com/TartuDen)
-[@Pomog](https://github.com/Pomog)
+
