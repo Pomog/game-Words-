@@ -50,12 +50,7 @@ class InputProcessor:
 	
 	def __init__(self, username):
 		self.username = username
-		self.conn = None
-		self.cursor = None
-		
-
-	def create_database(self, db_name):
-		self.conn = sqlite3.connect(db_name)
+		self.conn = sqlite3.connect("words_game.db")
 		self.cursor = self.conn.cursor()
 
 		# Create a column for each letter of the alphabet

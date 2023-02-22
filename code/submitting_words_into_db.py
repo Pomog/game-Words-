@@ -1003,11 +1003,10 @@ your
 yourself"""
 
 new_input=InputProcessor("Den")
-new_input.create_database("words_game.db")
 w=(words.split("\n"))
 
-# for word in w:
-#     new_input.input_acceptor(word)
+for word in w:
+    new_input.input_acceptor(word)
 
 print(new_input.get_words_by_letter("a"))
 print(new_input.get_words_by_letter("b"))
