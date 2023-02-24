@@ -2,6 +2,7 @@ import sqlite3
 
 class UserRegistration:
     """
+    
     A class representing user registration.
 
     Attributes:
