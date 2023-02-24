@@ -34,6 +34,8 @@ class UserRegistration:
     """
 
     def __init__(self):
+        # delete a db table, if needed
+        # self.delete_db_table()
         # Create a database connection
         self.conn = sqlite3.connect('user_database.db')
         self.cursor = self.conn.cursor()
@@ -68,7 +70,7 @@ class UserRegistration:
                 print("Invalid password! Password must be at least 6 characters long, contain at least one uppercase letter and one digit.")
                 continue
 
-            return {"name": name, "password": password}
+            self.input_validator ({"name": name, "password": password})
 
 
     def input_validator(self, data):
@@ -78,9 +80,18 @@ class UserRegistration:
         if result:
             print("Username already exists.")
             return False
-        return True
+        self.database_update (data)
 
     def database_update(self, data):
         # Insert the user's information into the database
         self.cursor.execute(f"INSERT INTO users (name, password) VALUES ('{data['name']}', '{data['password']}')")
         self.conn.commit()
+    
+    def delete_db_table(self):
+        conn = sqlite3.connect('user_database.db')
+        cursor = conn.cursor()
+
+        cursor.execute('DROP TABLE IF EXISTS users')
+
+        conn.commit()
+        conn.close()
