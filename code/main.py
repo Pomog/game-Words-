@@ -2,6 +2,7 @@ from inputProcessor import InputProcessor
 from userRegistration import UserRegistration
 from login import Login
 
+new_input=InputProcessor("Den123")
 log_in_success=False
 
 while not log_in_success:
@@ -21,7 +22,8 @@ while not log_in_success:
 print("You are in, let's play a game...")
 print("under development.... Stay put! Will be done soon, right Yurii????")
 
+stop_playing=False
 
-# new_input=InputProcessor()
-# test of pulling
-
+while not stop_playing:
+    new_word=new_input.input_request()    
+    stop_playing=True
