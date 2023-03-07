@@ -1,4 +1,4 @@
-from Input_ import InputProcessor
+from inputProcessor import InputProcessor
 
 
 words="""a
