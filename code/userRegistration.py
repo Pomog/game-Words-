@@ -44,7 +44,8 @@ class UserRegistration:
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS users
                                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
                                  name TEXT,
-                                 password TEXT)''')
+                                 password TEXT,
+                                 score INTEGER)''')
 
         # Commit the changes to the database
         self.conn.commit()
@@ -70,7 +71,7 @@ class UserRegistration:
                 print("Invalid password! Password must be at least 6 characters long, contain at least one uppercase letter and one digit.")
                 continue
 
-            self.input_validator ({"name": name, "password": password})
+            return ({"name": name, "password": password})
 
 
     def input_validator(self, data):
@@ -80,12 +81,13 @@ class UserRegistration:
         if result:
             print("Username already exists.")
             return False
-        self.database_update (data)
+        return (data)
 
     def database_update(self, data):
         # Insert the user's information into the database
         self.cursor.execute(f"INSERT INTO users (name, password) VALUES ('{data['name']}', '{data['password']}')")
         self.conn.commit()
+        return (data["name"],data["password"])
     
     def delete_db_table(self):
         conn = sqlite3.connect('user_database.db')

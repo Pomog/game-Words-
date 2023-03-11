@@ -1,6 +1,6 @@
 import string
 import sqlite3
-
+from user import User
 
 class InputProcessor:
 	
