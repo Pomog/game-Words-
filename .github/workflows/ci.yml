@@ -22,9 +22,3 @@ jobs:
     - name: Run tests
       run: |
         pytest
-
-    - name: Set version environment variable
-      env:
-        MY_PACKAGE_VERSION: $(python setup.py --version)
-      run: |
-        echo "The version of my package is $MY_PACKAGE_VERSION"
