@@ -1,7 +1,7 @@
 # from inputProcessor import InputProcessor
 
 
-words="""a
+words = """a
 ability
 able
 about
@@ -1003,7 +1003,7 @@ your
 yourself"""
 
 # new_input=InputProcessor("Den")
-w=(words.split("\n"))
+w = (words.split("\n"))
 
 # for word in w:
 #     new_input.input_acceptor(word)
