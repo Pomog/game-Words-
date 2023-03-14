@@ -9,7 +9,7 @@ played_words = []
 end_game = False
 
 
-def player_move_():
+def player_move():
     print("To stop playing, do not enter the word.")
     entered_word = input("Enter your word:  ")
     if entered_word == '':
