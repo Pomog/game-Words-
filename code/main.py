@@ -31,8 +31,10 @@ while not log_in_check:
 
 game_over=False
 
+
+
 while not game_over:
-    player1=InputProcessor()
+    player1=InputProcessor(player1_name[])
 
 
     

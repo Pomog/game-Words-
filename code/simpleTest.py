@@ -18,12 +18,23 @@ def player_move():
 
     if entered_word not in played_words:
         if entered_word in list_words:
-            played_words.append(entered_word)
-            letters=[entered_word[0],entered_word[-1]]
-            print(entered_word, '|')
-            return(entered_word,letters)
+            if len(played_words):
+                last_word=played_words[-1]
+                last_letter=last_word[-1]
+                if entered_word[0]==last_letter:
+                    played_words.append(entered_word)
+                    letters=[entered_word[0],entered_word[-1]]
+                    print(entered_word, '|')
+                    return(entered_word,letters)
+                else:
+                    print(f"The word should start with letter: {last_letter}")
+                    player_move()
+            else:
+                played_words.append(entered_word)
+                letters=[entered_word[0],entered_word[-1]]
+                print(entered_word, '|')
         else:
-            print("Such word does not exist, try another one...")
+            print("Such word does not exist in our db, try another one...")
             player_move()
     else:
         print("already played, type another word")
