@@ -24,5 +24,7 @@ jobs:
         pytest
 
     - name: Set version environment variable
+      env:
+        MY_PACKAGE_VERSION: $(python setup.py --version)
       run: |
-        echo "MY_PACKAGE_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+        echo "The version of my package is $MY_PACKAGE_VERSION"
