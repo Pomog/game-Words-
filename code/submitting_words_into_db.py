@@ -1,4 +1,4 @@
-from inputProcessor import InputProcessor
+# from inputProcessor import InputProcessor
 
 
 words="""a
@@ -1002,15 +1002,15 @@ young
 your
 yourself"""
 
-new_input=InputProcessor("Den")
+# new_input=InputProcessor("Den")
 w=(words.split("\n"))
 
-for word in w:
-    new_input.input_acceptor(word)
+# for word in w:
+#     new_input.input_acceptor(word)
 
-print(new_input.get_words_by_letter("a"))
-print(new_input.get_words_by_letter("b"))
-print(new_input.get_words_by_letter("c"))
-print(new_input.get_words_by_letter("d"))
-print(new_input.get_words_by_letter("e"))
-print(new_input.get_words_by_letter("f"))
+# print(new_input.get_words_by_letter("a"))
+# print(new_input.get_words_by_letter("b"))
+# print(new_input.get_words_by_letter("c"))
+# print(new_input.get_words_by_letter("d"))
+# print(new_input.get_words_by_letter("e"))
+# print(new_input.get_words_by_letter("f"))
