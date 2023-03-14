@@ -34,7 +34,7 @@ game_over=False
 
 
 while not game_over:
-    player1=InputProcessor(player1_name["name"])
+    player1=InputProcessor(player1_name[])
 
 
     
