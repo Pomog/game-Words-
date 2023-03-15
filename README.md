@@ -14,7 +14,6 @@ Python training
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pomog/game-Words-)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/Pomog/game-Words-)
 
-## Flake8 Summary\n\n
+## Flake8 Summary
 
-The Flake8 summary will be inserted here by the GitHub Actions workflow.
 
