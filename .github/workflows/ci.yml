@@ -17,15 +17,13 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
 
-    - name: Check for syntax errors
-      run: python -m py_compile ./**/*.py
+        - name: Check for syntax errors
+          run: python -m py_compile ./**/*.py
 
-    - name: Create an issue if syntax error exists
-      uses: peter-evans/create-issue-from-file@v2
-      with:
-        title: Python Compilation Error
-        content-filepath: syntax_errors.txt
-      if: failure()
+        - name: Create an issue if syntax error exists
+          uses: peter-evans/create-issue-from-file@v2
+          with:
+            title: Python Compilation Error
+            content-filepath: syntax_errors.txt
+          if: failure()
