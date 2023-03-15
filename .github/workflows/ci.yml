@@ -1,33 +1,40 @@
 name: Python Lint
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: pip install flake8
-    - name: Run Flake8
-      id: flake8
-      run: |
-        flake8
-        echo "::set-output name=summary::$(flake8 --count --select=E9,F63,F7,F82 --show-source --statistics)"
-    - name: Check Flake8 summary
-      run: echo "Flake8 summary:'${{ steps.flake8.outputs.summary }}'"
-    - name: Update README
-      uses: actions/github-script@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const summary = '${{ steps.flake8.outputs.summary }}';
-          const fs = require('fs');
-          let readme = fs.readFileSync('./README.md', 'utf8');
-          readme = readme.replace(/(## Flake8 Summary\n\n)([\s\S]*?)(\n\n)/gm, `$1${summary}$3`);
-          fs.writeFileSync('./README.md', readme);
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install flake8
+
+      - name: Run Flake8
+        id: flake8
+        run: |
+          flake8
+          echo "::set-output name=summary::$(flake8 --count --select=E9,F63,F7,F82 --show-source --statistics)"
+
+      - name: Check Flake8 summary
+        run: echo "Flake8 summary:'${{ steps.flake8.outputs.summary }}'"
+
+      - name: Update README
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const summary = '${{ steps.flake8.outputs.summary }}';
+            const fs = require('fs');
+            let readme = fs.readFileSync('README.md', 'utf8');
+            readme = readme.replace(/## Flake8 Summary[\s\S]+?(?=##|$)/gm, `## Flake8 Summary\n\n${summary}\n\n`);
+            fs.writeFileSync('README.md', readme);
