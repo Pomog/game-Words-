@@ -16,4 +16,5 @@ Python training
 
 ## Flake8 Summary
 
+The Flake8 summary will be inserted here by the GitHub Actions workflow.
 
