@@ -31,13 +31,4 @@ jobs:
           let readme = fs.readFileSync('./README.md', 'utf8');
           readme = readme.replace(/(## Flake8 Summary\n\n)([\s\S]*?)(\n\n)/gm, `$1${summary}$3`);
           fs.writeFileSync('./README.md', readme);
-    - name: Update README
-      uses: actions/github-script@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const summary = '${{ steps.flake8.outputs.summary }}';
-          const fs = require('fs');
-          let readme = fs.readFileSync('./README.md', 'utf8');
-          readme = readme.replace(/(## Flake8 Summary\n\n)([\s\S]*?)(\n\n)/gm, `$1${summary}$3`);
-          fs.writeFileSync('./README.md', readme);
+
