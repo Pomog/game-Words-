@@ -1,5 +1,6 @@
 # game-Words-
 <img src="https://github.com/Pomog/game-Words-/blob/main/logo.png?raw=true" alt="Words game" style="width:25%;">
+[![Python Lint](https://github.com/Pomog/game-Words-/actions/workflows/ci.yml/badge.svg)](https://github.com/Pomog/game-Words-/actions/workflows/ci.yml)
 
 # Overview
 The game will be implemented on Android, with data stored in a MySQL database on a Tomcat server. Players take turns entering words (excluding proper nouns), with each word having to start with the letter that the previous player's word ended with. Points are awarded for each valid word played.
